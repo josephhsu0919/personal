@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>徐彬偉老師 403 研究室｜成果展示 2024–2025</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --bg: #0d1117;
+  --bg2: #161b22;
+  --bg3: #21262d;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --text3: #484f58;
+  --teal: #39d353;
+  --teal2: #26a641;
+  --blue: #388bfd;
+  --blue2: #1f6feb;
+  --orange: #f78166;
+  --purple: #bc8cff;
+  --yellow: #e3b341;
+  --red: #f85149;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* ── HEADER ── */
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(13,17,23,0.92);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; gap: 1rem;
+  height: 56px;
+}
+.logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px; font-weight: 600;
+  color: var(--teal);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+nav { display: flex; gap: 0; margin-left: auto; }
+nav a {
+  color: var(--text2); text-decoration: none;
+  font-size: 13px; padding: 0 0.75rem;
+  line-height: 56px;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--text); }
+
+/* ── HERO ── */
+.hero {
+  padding: 5rem 2rem 4rem;
+  max-width: 900px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 3rem; align-items: center;
+}
+.hero-left h1 {
+  font-family: 'Noto Serif TC', serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 900; line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+.hero-left h1 span { color: var(--teal); }
+.hero-meta {
+  font-size: 13px; color: var(--text2);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 1.5rem;
+}
+.hero-desc { color: var(--text2); font-size: 14px; margin-bottom: 2rem; }
+.btn {
+  display: inline-block; padding: 0.5rem 1.25rem;
+  border-radius: 6px; font-size: 13px; font-weight: 500;
+  text-decoration: none; cursor: pointer; border: none;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn:hover { opacity: 0.85; transform: translateY(-1px); }
+.btn-green { background: var(--teal2); color: white; }
+.btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); margin-left: 0.5rem; }
+
+.hero-right {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px; overflow: hidden;
+}
+.hero-right-header {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; gap: 6px; align-items: center;
+}
+.dot { width: 10px; height: 10px; border-radius: 50%; }
+.dot.red { background: #f85149; }
+.dot.yellow { background: #e3b341; }
+.dot.green { background: #39d353; }
+.code-content {
+  padding: 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; line-height: 1.8;
+  color: var(--text2);
+}
+.c-green { color: var(--teal); }
+.c-blue { color: var(--blue); }
+.c-orange { color: var(--orange); }
+.c-purple { color: var(--purple); }
+.c-yellow { color: var(--yellow); }
+
+/* ── STATS ── */
+.stats-bar {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  display: flex; justify-content: center; gap: 4rem;
+}
+.stat { text-align: center; }
+.stat-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem; font-weight: 600;
+  color: var(--teal); display: block;
+}
+.stat-label { font-size: 12px; color: var(--text2); }
+
+/* ── SECTION ── */
+.section {
+  max-width: 900px; margin: 0 auto;
+  padding: 4rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.section:last-child { border-bottom: none; }
+.section-header {
+  display: flex; align-items: center; gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+.section-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--text3);
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.section-title {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 1.4rem; font-weight: 700;
+}
+
+/* ── PROJECTS ── */
+.project-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border); border-radius: 8px;
+  overflow: hidden;
+}
+.project-card {
+  background: var(--bg);
+  padding: 1.5rem;
+  transition: background 0.2s;
+}
+.project-card:hover { background: var(--bg2); }
+.project-card.full { grid-column: 1 / -1; }
+.project-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; color: var(--text3);
+  margin-bottom: 0.5rem;
+}
+.project-title {
+  font-weight: 700; font-size: 15px;
+  color: var(--text); margin-bottom: 0.4rem;
+}
+.project-sub {
+  font-size: 12px; color: var(--text2);
+  margin-bottom: 0.75rem;
+}
+.tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 0.75rem; }
+.tag {
+  font-size: 11px; padding: 2px 8px;
+  border-radius: 20px; border: 1px solid;
+  font-family: 'JetBrains Mono', monospace;
+}
+.tag.teal { border-color: var(--teal2); color: var(--teal); }
+.tag.blue { border-color: var(--blue2); color: var(--blue); }
+.tag.orange { border-color: #6e3a2f; color: var(--orange); }
+.tag.purple { border-color: #6e40c9; color: var(--purple); }
+.tag.yellow { border-color: #9e7a1f; color: var(--yellow); }
+.project-desc {
+  font-size: 13px; color: var(--text2);
+  line-height: 1.6;
+}
+.result-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.75rem; }
+.chip {
+  font-size: 12px; padding: 3px 10px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 4px; color: var(--text2);
+  font-family: 'JetBrains Mono', monospace;
+}
+.chip.highlight { color: var(--teal); border-color: var(--teal2); }
+
+/* ── AUDIO ── */
+.audio-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.audio-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden;
+}
+.audio-header {
+  padding: 1rem 1.25rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: flex-start; gap: 0.75rem;
+}
+.audio-icon {
+  width: 36px; height: 36px; border-radius: 6px;
+  background: var(--bg3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; flex-shrink: 0;
+}
+.audio-title { font-weight: 600; font-size: 14px; margin-bottom: 2px; }
+.audio-meta { font-size: 11px; color: var(--text2); }
+.audio-body { padding: 1rem 1.25rem; }
+audio {
+  width: 100%;
+  height: 36px;
+  border-radius: 4px;
+}
+audio::-webkit-media-controls-panel { background: var(--bg3); }
+
+/* ── VIDEO ── */
+.video-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden;
+}
+.video-placeholder {
+  aspect-ratio: 16/9;
+  background: var(--bg3);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.75rem;
+}
+.play-btn {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--blue2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  text-decoration: none;
+}
+.play-btn:hover { transform: scale(1.1); background: var(--blue); }
+.video-label { font-size: 13px; color: var(--text2); }
+.video-info {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.video-info-title { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+.video-info-meta { font-size: 12px; color: var(--text2); }
+
+/* ── GAME ── */
+.game-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden;
+}
+.game-placeholder {
+  min-height: 320px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1rem; padding: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.game-icon { font-size: 48px; }
+.game-coming { font-size: 14px; color: var(--text2); text-align: center; }
+.game-coming strong { color: var(--yellow); display: block; margin-bottom: 0.25rem; font-size: 16px; }
+.game-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; padding: 4px 12px;
+  border: 1px solid var(--yellow);
+  color: var(--yellow); border-radius: 20px;
+}
+.game-info { padding: 1rem 1.25rem; }
+.game-title { font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+.game-desc { font-size: 12px; color: var(--text2); }
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  font-size: 12px; color: var(--text3);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+@media (max-width: 640px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-right { display: none; }
+  .project-grid { grid-template-columns: 1fr; }
+  .audio-grid { grid-template-columns: 1fr; }
+  .stats-bar { gap: 2rem; flex-wrap: wrap; }
+  nav { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a class="logo" href="#">NPUST / 403-lab</a>
+  <nav>
+    <a href="#projects">專案</a>
+    <a href="#audio">語音摘要</a>
+    <a href="#video">自我介紹</a>
+    <a href="#game">小遊戲</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+    <h1>Applied AI &<br><span>Systems Lab</span></h1>
+    <div class="hero-meta">NPUST · 工業管理系 · 徐彬偉老師 403 研究室 · 2024–2025</div>
+    <p class="hero-desc">五個產學合作專案，從製造業 AI 到雲端 ERP，每一個都是學生與業界共同解決的真實問題。</p>
+    <a href="#projects" class="btn btn-green">查看成果</a>
+    <a href="#audio" class="btn btn-outline">收聽摘要</a>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-header">
+      <div class="dot red"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <div class="code-content">
+      <div><span class="c-purple">projects</span> <span class="c-blue">=</span> [</div>
+      <div>&nbsp;&nbsp;<span class="c-green">"MES巡檢掃描系統"</span>,</div>
+      <div>&nbsp;&nbsp;<span class="c-green">"AI牙齒評分系統"</span>,</div>
+      <div>&nbsp;&nbsp;<span class="c-green">"Excel清理平台"</span>,</div>
+      <div>&nbsp;&nbsp;<span class="c-green">"食品AOI檢測"</span>,</div>
+      <div>&nbsp;&nbsp;<span class="c-green">"雲端ERP系統"</span></div>
+      <div>]</div>
+      <div>&nbsp;</div>
+      <div><span class="c-blue">for</span> project <span class="c-blue">in</span> projects:</div>
+      <div>&nbsp;&nbsp;<span class="c-orange">deploy</span>(project,</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;platform=<span class="c-green">"HuggingFace"</span>)</div>
+      <div>&nbsp;</div>
+      <div><span class="c-yellow"># 2024–2025 完成 ✓</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat">
+    <span class="stat-num">5</span>
+    <span class="stat-label">完成專案</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">6</span>
+    <span class="stat-label">參與學生</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">3</span>
+    <span class="stat-label">產業合作夥伴</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">2</span>
+    <span class="stat-label">雲端部署平台</span>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<div class="section" id="projects">
+  <div class="section-header">
+    <span class="section-tag">// 01–05</span>
+    <h2 class="section-title">研究室成果展示</h2>
+  </div>
+
+  <div class="project-grid">
+
+    <!-- 01 MES -->
+    <div class="project-card">
+      <div class="project-num">01 / MES System</div>
+      <div class="project-title">MES 巡檢掃描與工時計算系統</div>
+      <div class="project-sub">工管大四 沈宛瑩、陳嘉億 · 產學合作</div>
+      <div class="tags">
+        <span class="tag teal">QR Code 掃描</span>
+        <span class="tag blue">Gradient Boosting</span>
+        <span class="tag orange">IPQC 巡檢</span>
+      </div>
+      <p class="project-desc">解決工廠製程透明度不足的問題。IPQC 掃描工件 QR Code，AI 模型推論延誤機率，輸出最佳巡檢路線與高風險工件清單。</p>
+      <div class="result-chips">
+        <span class="chip highlight">P50/P75/P90 基準</span>
+        <span class="chip">進度偏差指標 NPD</span>
+        <span class="chip">Top N 風險清單</span>
+      </div>
+    </div>
+
+    <!-- 02 牙齒 -->
+    <div class="project-card">
+      <div class="project-num">02 / Dental AI</div>
+      <div class="project-title">AI 牙齒評分系統 & 齒模拍攝 SOP</div>
+      <div class="project-sub">合作：黃祥熙教授 × 高雄醫學大學</div>
+      <div class="tags">
+        <span class="tag teal">YOLOv8n</span>
+        <span class="tag blue">ResNet18</span>
+        <span class="tag purple">Hugging Face</span>
+      </div>
+      <p class="project-desc">電腦視覺自動評分齒模品質。YOLOv8n 偵測 ROI，ResNet18 回歸評分，部署至 Hugging Face Spaces，單張評分不到 2 秒。</p>
+      <div class="result-chips">
+        <span class="chip highlight">平均分數輸出</span>
+        <span class="chip">A–F 評級系統</span>
+        <span class="chip">&lt; 2 秒推論</span>
+      </div>
+    </div>
+
+    <!-- 03 Excel -->
+    <div class="project-card">
+      <div class="project-num">03 / Data Cleaning</div>
+      <div class="project-title">Excel 資料清理平台</div>
+      <div class="project-sub">Streamlit · Pandas · 臺灣髒資料處理</div>
+      <div class="tags">
+        <span class="tag teal">Streamlit</span>
+        <span class="tag blue">Pandas</span>
+        <span class="tag yellow">辦公室 AI 應用</span>
+      </div>
+      <p class="project-desc">解決台灣辦公室最常見的資料問題：民國西元混用、手機格式多樣、千分位金額、姓名多餘空格，一鍵清理，異常資料標記保留。</p>
+      <div class="result-chips">
+        <span class="chip highlight">日期格式標準化</span>
+        <span class="chip">手機統一格式</span>
+        <span class="chip">金額清理</span>
+      </div>
+    </div>
+
+    <!-- 04 AOI -->
+    <div class="project-card">
+      <div class="project-num">04 / Food AOI</div>
+      <div class="project-title">食品 AOI 外觀瑕疵檢測系統</div>
+      <div class="project-sub">影像分類 · 深度學習 · 工廠品管應用</div>
+      <div class="tags">
+        <span class="tag teal">CNN</span>
+        <span class="tag blue">Gradio</span>
+        <span class="tag orange">遷移學習</span>
+      </div>
+      <p class="project-desc">二元分類模型判定食品外觀正常或瑕疵。Softmax 輸出機率值，Gradio 介面部署，信心度 100% 瑕疵案例已驗證，適用食品 AOI 品管場景。</p>
+      <div class="result-chips">
+        <span class="chip highlight">Defect 100% 信心度</span>
+        <span class="chip">Accuracy / F1-Score</span>
+        <span class="chip">雲端部署</span>
+      </div>
+    </div>
+
+    <!-- 05 ERP -->
+    <div class="project-card full">
+      <div class="project-num">05 / Cloud ERP</div>
+      <div class="project-title">蜜汁豬肉乾製造廠雲端 ERP</div>
+      <div class="project-sub">Streamlit · PostgreSQL · Supabase · Render 雲端部署</div>
+      <div class="tags">
+        <span class="tag teal">生產管理</span>
+        <span class="tag blue">庫存管理</span>
+        <span class="tag orange">採購管理</span>
+        <span class="tag purple">銷售管理</span>
+        <span class="tag yellow">KPI 儀表板</span>
+      </div>
+      <p class="project-desc">針對中小型食品加工廠開發的完整雲端 ERP。五大功能模組整合，四種角色權限控管（管理員/製造/倉庫/採購），PostgreSQL 雲端資料庫，Render 自動部署，可作為工管課程 ERP 實作學習範例。</p>
+      <div class="result-chips">
+        <span class="chip highlight">5 大功能模組</span>
+        <span class="chip">4 種角色權限</span>
+        <span class="chip">Supabase 雲端 DB</span>
+        <span class="chip">Render 一鍵部署</span>
+        <span class="chip">瀏覽器直接操作</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- AUDIO -->
+<div class="section" id="audio">
+  <div class="section-header">
+    <span class="section-tag">// NotebookLM Audio Overview</span>
+    <h2 class="section-title">語音摘要</h2>
+  </div>
+  <p style="color:var(--text2); font-size:14px; margin-bottom:1.5rem;">由 NotebookLM 根據研究資料自動生成的 AI 語音摘要，適合通勤時收聽，快速掌握核心論點。</p>
+
+  <div class="audio-grid">
+    <div class="audio-card">
+      <div class="audio-header">
+        <div class="audio-icon">🧠</div>
+        <div>
+          <div class="audio-title">心理測驗會走鐘</div>
+          <div class="audio-meta">NotebookLM Audio Overview · AI 生成語音</div>
+        </div>
+      </div>
+      <div class="audio-body">
+        <audio controls>
+          <source src="心理測驗會走鐘.m4a" type="audio/mp4">
+          您的瀏覽器不支援音訊播放。
+        </audio>
+      </div>
+    </div>
+
+    <div class="audio-card">
+      <div class="audio-header">
+        <div class="audio-icon">📊</div>
+        <div>
+          <div class="audio-title">AI 揭穿 ESG 報告的作秀真相</div>
+          <div class="audio-meta">NotebookLM Audio Overview · AI 生成語音</div>
+        </div>
+      </div>
+      <div class="audio-body">
+        <audio controls>
+          <source src="AI_揭穿_ESG_報告的作秀真相.m4a" type="audio/mp4">
+          您的瀏覽器不支援音訊播放。
+        </audio>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VIDEO -->
+<div class="section" id="video">
+  <div class="section-header">
+    <span class="section-tag">// HeyGen AI Avatar</span>
+    <h2 class="section-title">自我介紹影片</h2>
+  </div>
+  <p style="color:var(--text2); font-size:14px; margin-bottom:1.5rem;">由 HeyGen AI 主播生成的自我介紹影片，說明課程學習成果與個人分工。</p>
+
+  <div class="video-card">
+    <div class="video-placeholder">
+      <a class="play-btn" href="https://app.heygen.com/videos/test1-05ec9f2e4cc944e294903d6c7440fc27" target="_blank">▶</a>
+      <div class="video-label">點擊播放 HeyGen 自我介紹影片</div>
+    </div>
+    <div class="video-info">
+      <div class="video-info-title">HeyGen AI 自我介紹影片</div>
+      <div class="video-info-meta">使用 HeyGen AI 主播生成，繁體中文語音 · 說明姓名、系所、課程分工</div>
+    </div>
+  </div>
+</div>
+
+<!-- GAME -->
+<div class="section" id="game">
+  <div class="section-header">
+    <span class="section-tag">// Codex Interactive Game</span>
+    <h2 class="section-title">互動小遊戲</h2>
+  </div>
+  <p style="color:var(--text2); font-size:14px; margin-bottom:1.5rem;">由 OpenAI Codex 生成的互動小遊戲，融入課程學習主題。</p>
+
+  <div class="game-card">
+    <div class="game-placeholder">
+      <div class="game-icon">🎮</div>
+      <div class="game-coming">
+        <strong>遊戲即將嵌入</strong>
+        將 Codex 生成的遊戲 HTML 檔案上傳後，<br>
+        這個區塊會替換成可以直接玩的互動遊戲。
+      </div>
+      <span class="game-badge">Coming Soon</span>
+    </div>
+    <div class="game-info">
+      <div class="game-title">屏科畢業大冒險</div>
+      <div class="game-desc">管理學院關卡：收集企劃、預算、分工，避開 Deadline，完成院長任務。由 Codex 生成，嵌入後可直接在瀏覽器遊玩。</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div>NPUST · 工業管理系 · 徐彬偉老師 403 研究室 · 2024–2025</div>
+  <div style="margin-top:0.5rem; color: var(--text3);">Built with NotebookLM · Claude Artifacts · HeyGen · Codex</div>
+</footer>
+
+</body>
+</html>
